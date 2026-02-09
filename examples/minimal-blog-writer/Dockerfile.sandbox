@@ -1,0 +1,17 @@
+FROM node:22-slim
+
+# Install common development tools
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    curl \
+    jq \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Claude Code CLI
+RUN npm install -g @anthropic-ai/claude-code
+
+# Use existing node user (UID 1000, GID 1000)
+USER node
+WORKDIR /workspace
+
+ENTRYPOINT ["claude"]
