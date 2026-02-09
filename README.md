@@ -15,7 +15,7 @@ It works with any agentic AI tool that can read files and have a conversation: C
 **Step 1: Clone and open this repository with your AI tool**
 
 ```bash
-git clone https://github.com/yourusername/recursa.git
+git clone https://github.com/dhuree/recursa.git
 cd recursa
 # Start your preferred AI assistant here
 ```
