@@ -1,6 +1,8 @@
-# Claude Code Instructions for Recursa
+# Agent Instructions for Recursa
 
-This file provides instructions for Claude Code on how to use the Recursa framework to bootstrap new self-improving projects.
+This file provides instructions for AI coding assistants on how to use the Recursa framework to bootstrap new self-improving projects.
+
+**Compatible with**: Claude Code, Cursor, Windsurf, Cline, Codex, ChatGPT, and any AI assistant that can read files and execute commands.
 
 ---
 
@@ -48,7 +50,7 @@ cd /path/to/target && git status || git init
 
 ### Step 3: Conduct the Interview
 
-**Use the AskUserQuestion tool** to gather information about their domain. Follow the interview structure in `INTERVIEW.md`.
+Gather information about the user's domain. Follow the interview structure in `INTERVIEW.md`.
 
 The interview covers:
 1. **Domain Definition** - What are they building?
@@ -58,30 +60,43 @@ The interview covers:
 5. **Safety Requirements** - What constraints exist?
 6. **Identity** - What personality should the system have?
 
-**Important**: Ask questions in batches of 2-4 using the multi-question capability of AskUserQuestion. This is more efficient than one at a time.
+**Important**: Ask questions in batches of 2-4 when possible. This is more efficient than one at a time.
+
+**Critical**: Record all interview answers. They will be preserved in `system/ORIGIN.md` to give the system permanent access to its foundational purpose and context.
 
 ### Step 4: Generate Customized Documents
 
 Based on interview answers, generate customized versions of each template:
 
-**Core Identity (create first)**:
+**Bootstrap Record (create FIRST)**:
+0. `system/ORIGIN.md` - From `templates/ORIGIN.template.md`
+   - **This is critical**: Capture ALL interview answers here
+   - Include the original bootstrap prompt
+   - Record the interview transcript
+   - Document rationale for key decisions
+   - This gives the system permanent memory of its purpose
+
+**Core Identity**:
 1. `system/SOUL.md` - From `templates/SOUL.template.md`
 2. `system/CONSTITUTION.md` - From `templates/CONSTITUTION.template.md`
 3. `system/IDENTITY.md` - From `templates/IDENTITY.template.md`
+4. `system/STYLE.md` - From `templates/STYLE.template.md`
 
 **Operational**:
-4. `docs/LOOP.md` - From `templates/LOOP.template.md`
-5. `docs/MEMORY.md` - From `templates/MEMORY.template.md`
-6. `docs/LEARNING.md` - From `templates/LEARNING.template.md`
-7. `docs/METRICS.md` - From `templates/METRICS.template.md`
-8. `docs/EVOLUTION.md` - From `templates/EVOLUTION.template.md`
+5. `docs/LOOP.md` - From `templates/LOOP.template.md`
+6. `docs/MEMORY.md` - From `templates/MEMORY.template.md`
+7. `docs/LEARNING.md` - From `templates/LEARNING.template.md`
+8. `docs/METRICS.md` - From `templates/METRICS.template.md`
+9. `docs/GOALS.md` - From `templates/GOALS.template.md`
+10. `docs/EVOLUTION.md` - From `templates/EVOLUTION.template.md`
+11. `docs/EXPERIMENTS.md` - From `templates/EXPERIMENTS.template.md`
 
 **Safety**:
-9. `guardrails/GUARDRAILS.md` - From `templates/GUARDRAILS.template.md`
-10. `guardrails/policies/` - Domain-specific policies
+12. `guardrails/GUARDRAILS.md` - From `templates/GUARDRAILS.template.md`
+13. `guardrails/policies/` - Domain-specific policies
 
 **Structure**:
-11. Create directory structure per `DIRECTORY_STRUCTURE.md`
+14. Create directory structure per `DIRECTORY_STRUCTURE.md`
 
 ### Step 5: Create Initial Infrastructure
 
@@ -187,6 +202,21 @@ When customizing templates, replace:
 - Voice characteristics → Domain-appropriate style
 - Communication patterns → User preferences
 
+### In STYLE.template.md
+- Tone and voice → Domain-appropriate communication style
+- Formatting preferences → User preferences
+- Examples → Domain-specific examples
+
+### In GOALS.template.md
+- `[Goal 1]` etc. → Domain-specific objectives
+- Success criteria → Measurable outcomes
+- Timeframes → Appropriate horizons
+
+### In EXPERIMENTS.template.md
+- `[Hypothesis 1]` etc. → Domain-specific hypotheses
+- Test methods → Appropriate validation approaches
+- Success criteria → Measurable outcomes
+
 ---
 
 ## Example Bootstrapping Session
@@ -194,9 +224,9 @@ When customizing templates, replace:
 ```
 User: Bootstrap a self-improving project for my blog writing at /home/user/blog-system
 
-Claude: I'll help you create a self-improving blog writing system. Let me ask a few questions to customize it for your needs.
+Agent: I'll help you create a self-improving blog writing system. Let me ask a few questions to customize it for your needs.
 
-[Uses AskUserQuestion with multiple questions about:
+[Asks questions about:
 - What kind of blog posts (technical, personal, business)?
 - How long is a typical writing session?
 - How do you measure a successful post?
@@ -204,7 +234,7 @@ Claude: I'll help you create a self-improving blog writing system. Let me ask a 
 
 User: [Answers questions]
 
-Claude: Based on your answers, I'll now create your self-improving blog system.
+Agent: Based on your answers, I'll now create your self-improving blog system.
 
 [Creates directory structure]
 [Generates customized SOUL.md with blog writing focus]
@@ -213,8 +243,8 @@ Claude: Based on your answers, I'll now create your self-improving blog system.
 [Generates METRICS.md with blog-relevant metrics]
 [etc.]
 
-Claude: I've created your self-improving blog writing system with:
-- 12 customized documents
+Agent: I've created your self-improving blog writing system with:
+- 14 customized documents
 - Directory structure for memory, skills, and deliverables
 - Metrics tracking for post quality and learning velocity
 
@@ -243,6 +273,39 @@ Generate files from previously collected interview answers.
 
 ### `/validate [path]`
 Check an existing Recursa-based project for completeness.
+
+**CLI Alternative**: You can also use the Python CLI tools:
+
+```bash
+# Initialize minimal structure quickly
+python tools/recursa.py init /path/to/project
+
+# Validate an existing project
+python tools/recursa.py validate /path/to/project
+
+# Check project status (iteration count, metrics)
+python tools/recursa.py status /path/to/project
+
+# Log an action to the audit trail
+python tools/recursa.py log /path/to/project -a "action_type" -m "message"
+
+# Check for and apply migrations
+python tools/recursa.py migrate /path/to/project --apply
+```
+
+---
+
+## Example Projects
+
+Refer users to the `examples/` directory for working examples:
+
+- `examples/minimal-blog-writer/` - Blog writing system
+- `examples/code-review-system/` - PR review system
+- `examples/research-assistant/` - Research synthesis
+- `examples/personal-crm/` - Relationship management
+- `examples/learning-tracker/` - Study optimization
+
+These can serve as templates or inspiration for new projects.
 
 ---
 

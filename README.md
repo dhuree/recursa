@@ -6,6 +6,69 @@ Recursa (from Latin *recursus* - "a running back") is a framework for creating i
 
 ---
 
+## How to Use
+
+Recursa is a **meta-framework**. You don't use it directly—you use it to **bootstrap** new self-improving projects for any domain.
+
+It works with any agentic AI tool that can read files and have a conversation: Claude Code, Cowork, Cursor, Windsurf, Cline, Codex, or similar tools.
+
+**Step 1: Clone and open this repository with your AI tool**
+
+```bash
+git clone https://github.com/yourusername/recursa.git
+cd recursa
+# Start your preferred AI assistant here
+```
+
+**Step 2: Ask your AI to bootstrap a project**
+
+Give a prompt like:
+- "Bootstrap a self-improving blogging system at ~/my-blog"
+- "Create a research project at ~/research"
+- "Set up a self-improving fitness coaching system at ~/fitness"
+- "Bootstrap a content creation workflow at ~/youtube-channel"
+- "Create a language learning system at ~/spanish-practice"
+- "Set up a self-improving sales outreach system at ~/sales"
+
+**Step 3: Answer the interview questions**
+
+Your AI will ask about your domain, workflow, quality criteria, and goals to customize the system for your needs.
+
+**Step 4: Navigate to your new project and start the loop**
+
+```bash
+cd ~/my-blog  # or wherever you bootstrapped
+# Start your AI assistant and begin your first iteration
+```
+
+Your bootstrapped project will contain customized documentation guiding you through each iteration cycle.
+
+### What Happens
+
+1. **The AI reads** the templates and interview structure
+2. **The AI asks** questions about your domain (purpose, workflow, metrics, etc.)
+3. **The AI generates** customized versions of all documents in your target folder
+4. **You review** and adjust the generated system
+5. **You iterate** using your new self-improving system
+
+### Detailed Guides
+
+- `BOOTSTRAPPING_GUIDE.md` - Full walkthrough for users
+- `AGENT.md` - Instructions for AI assistants
+- `INTERVIEW.md` - Question bank for domain discovery
+
+### Manual Setup (Without AI)
+
+If you prefer to set up manually:
+
+1. **Read** `ARCHITECTURE.md` to understand the patterns
+2. **Follow** `BOOTSTRAP.md` step-by-step
+3. **Copy** templates from `templates/` to your project
+4. **Customize** each template for your domain
+5. **Create** directory structure per `DIRECTORY_STRUCTURE.md`
+
+---
+
 ## The Core Insight
 
 Any system that iteratively produces outputs can be made self-improving through seven architectural layers:
@@ -153,7 +216,7 @@ The **Ratchet Principle**: Improvements accumulate, failures don't. Every change
 ### Usage Guides
 | Document | Purpose |
 |----------|---------|
-| `CLAUDE.md` | Instructions for Claude Code on how to bootstrap projects |
+| `AGENT.md` | Instructions for AI assistants on how to bootstrap projects |
 | `BOOTSTRAPPING_GUIDE.md` | Detailed user guide for the bootstrapping process |
 | `INTERVIEW.md` | Question bank for domain discovery |
 
@@ -170,6 +233,7 @@ The **Ratchet Principle**: Improvements accumulate, failures don't. Every change
 **Identity & Governance**:
 | Template | Purpose |
 |----------|---------|
+| `templates/ORIGIN.template.md` | Bootstrap context, interview answers, foundational purpose |
 | `templates/SOUL.template.md` | Behavioral philosophy, values, identity |
 | `templates/CONSTITUTION.template.md` | Inviolable rules, hard boundaries |
 | `templates/GUARDRAILS.template.md` | Safety infrastructure, audit, rollback |
@@ -182,78 +246,76 @@ The **Ratchet Principle**: Improvements accumulate, failures don't. Every change
 | `templates/METRICS.template.md` | Quantitative tracking framework |
 | `templates/LEARNING.template.md` | Discovery accumulation |
 | `templates/EVOLUTION.template.md` | Self-improvement meta-system |
+| `templates/GOALS.template.md` | Current objectives and priorities |
+| `templates/EXPERIMENTS.template.md` | Hypothesis testing framework |
+| `templates/STYLE.template.md` | Communication and formatting standards |
+| `templates/IDENTITY.template.md` | Name, personality, presentation |
+
+**Multi-Agent**:
+| Template | Purpose |
+|----------|---------|
+| `templates/ORCHESTRATION.template.md` | Multi-agent coordination patterns |
+
+### Tools
+
+| Tool | Purpose |
+|------|---------|
+| `tools/recursa.py` | CLI for init, validate, status, log, migrate |
+| `tools/validate.py` | Project structure validation |
+
+```bash
+# Initialize a new project
+python tools/recursa.py init ~/my-project
+
+# Validate project structure
+python tools/recursa.py validate ~/my-project
+
+# Check project status
+python tools/recursa.py status ~/my-project
+
+# Log an action
+python tools/recursa.py log ~/my-project -a "edit" -m "Updated SOUL.md"
+
+# Check for migrations
+python tools/recursa.py migrate ~/my-project
+```
 
 ### Research
 | Document | Purpose |
 |----------|---------|
 | `references/Self_Improving_Agentic_Systems_Research_Report.md` | Comprehensive research on the field |
 
+### Examples
+
+Working examples demonstrating Recursa in different domains:
+
+| Example | Domain | Description |
+|---------|--------|-------------|
+| `examples/minimal-blog-writer/` | Content Creation | Blog writing with quality tracking |
+| `examples/code-review-system/` | Software Development | PR review with learning from feedback |
+| `examples/research-assistant/` | Knowledge Work | Literature review and synthesis |
+| `examples/personal-crm/` | Relationships | Contact management with outreach optimization |
+| `examples/learning-tracker/` | Education | Study optimization with spaced repetition |
+
+Each example includes customized SOUL.md, LOOP.md, LEARNING.md, and METRICS.md for its domain.
+
 ---
 
-## How to Use Recursa
+## Version & Migration
 
-Recursa is a **meta-framework**. You don't use it directly—you use it to **bootstrap** new self-improving projects.
-
-### Quick Start with Claude Code
+Recursa uses semantic versioning. Check your project version:
 
 ```bash
-# 1. Start Claude Code in the Recursa folder
-cd /path/to/recursa
-claude
-
-# 2. Tell Claude to bootstrap a new project
-> Bootstrap a self-improving project at /path/to/my-project
-
-# 3. Answer Claude's questions about your domain
-# 4. Review the generated files
-# 5. Start using your new system!
+cat .recursa-version
 ```
 
-### What Happens
+Migrate existing projects to the latest framework:
 
-1. **Claude reads** the templates and interview structure
-2. **Claude asks** questions about your domain (purpose, workflow, metrics, etc.)
-3. **Claude generates** customized versions of all documents in your target folder
-4. **You review** and adjust the generated system
-5. **You iterate** using your new self-improving system
-
-### Example Commands
-
-```
-> Bootstrap a self-improving blog writing system at ~/blog
-
-> Create a Recursa system for my fitness training at ~/fitness
-
-> Set up a self-improving dev workflow at ~/myapp/workflow
-
-> Bootstrap a minimal system for personal learning at ~/learning
+```bash
+python tools/recursa.py migrate ~/my-project --apply
 ```
 
-### Detailed Guides
-
-- `BOOTSTRAPPING_GUIDE.md` - Full walkthrough for users
-- `CLAUDE.md` - Instructions for Claude Code
-- `INTERVIEW.md` - Question bank for domain discovery
-
----
-
-## Manual Setup (Without AI)
-
-If you prefer to set up manually:
-
-1. **Read** `ARCHITECTURE.md` to understand the patterns
-2. **Follow** `BOOTSTRAP.md` step-by-step
-3. **Copy** templates from `templates/` to your project
-4. **Customize** each template for your domain
-5. **Create** directory structure per `DIRECTORY_STRUCTURE.md`
-
----
-
-## Origin
-
-Recursa was extracted from a self-improving creative system for generating album art. That system demonstrated that structured memory, honest metrics, and systematic self-evaluation could transform a simple generation loop into a continuously improving intelligence.
-
-The patterns proved to be domain-agnostic. This repository captures those patterns for application to any domain where iterative improvement is possible.
+See `MIGRATION.md` for detailed migration guides.
 
 ---
 

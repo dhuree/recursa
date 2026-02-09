@@ -261,7 +261,7 @@ One of the most distinctive features of modern self-improving agents is that the
 
 | File | Purpose | Who Reads It |
 |------|---------|--------------|
-| `CLAUDE.md` / `AGENT.md` | Session-specific instructions, project context, coding conventions | The agent (per-project) |
+| `AGENT.md` | Session-specific instructions, project context, coding conventions | The agent (per-project) |
 | `SKILLS.md` | Registry of available skills, tools, and when to use them | The agent |
 | `MEMORY.md` | Accumulated knowledge, user preferences, learned patterns | The agent |
 | `JOURNAL.md` | Episodic log of past actions, outcomes, reflections | The agent + reflection engine |

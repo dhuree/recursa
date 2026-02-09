@@ -1,0 +1,9 @@
+# Recursa CLI dependencies
+# Note: The CLI works with Python standard library only
+# These are optional for enhanced output
+
+# Optional: Pretty terminal output
+# rich>=13.0.0
+
+# Optional: Better CLI argument handling
+# click>=8.0.0

@@ -33,7 +33,7 @@ Before bootstrapping:
 
 1. **Have a target folder** - Where your new project will live
 2. **Know your domain** - What kind of work you're improving
-3. **Have Claude Code** - Or similar AI coding assistant
+3. **Have an AI assistant** - Claude Code, Cursor, Windsurf, Cline, or similar
 
 ---
 
@@ -65,11 +65,11 @@ That's it. You can add more components later as needed.
 
 ## Standard Quick Start
 
-### Step 1: Start Claude Code in Recursa
+### Step 1: Start Your AI Assistant in Recursa
 
 ```bash
 cd /path/to/recursa
-claude
+# Start your AI assistant (Claude Code, Cursor, Windsurf, Cline, etc.)
 ```
 
 ### Step 2: Request Bootstrap
@@ -412,7 +412,7 @@ Options:
 
 ## Getting Help
 
-### Within Claude Code
+### Within Your AI Assistant
 
 Ask:
 - "How should I use [document]?"

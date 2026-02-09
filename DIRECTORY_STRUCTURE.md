@@ -4,6 +4,45 @@ A well-organized directory structure is the system's brain on disk. Every sessio
 
 ---
 
+## Framework Structure (Recursa Repository)
+
+The Recursa framework itself has this structure:
+
+```
+recursa/
+├── templates/              # Document templates for bootstrapping
+│   ├── SOUL.template.md
+│   ├── LOOP.template.md
+│   ├── LEARNING.template.md
+│   ├── METRICS.template.md
+│   ├── ORCHESTRATION.template.md
+│   └── ...
+├── tools/                  # CLI tools for project management
+│   ├── recursa.py          # Main CLI (init, validate, status, log, migrate)
+│   ├── validate.py         # Project validation logic
+│   └── requirements.txt    # Python dependencies
+├── examples/               # Working example projects
+│   ├── minimal-blog-writer/
+│   ├── code-review-system/
+│   ├── research-assistant/
+│   ├── personal-crm/
+│   └── learning-tracker/
+├── references/             # Research and background
+├── AGENT.md                # Instructions for AI assistants
+├── ARCHITECTURE.md         # Framework architecture
+├── BOOTSTRAP.md            # Manual setup guide
+├── BOOTSTRAPPING_GUIDE.md  # User guide
+├── INTERVIEW.md            # Domain discovery questions
+├── MIGRATION.md            # Version migration guide
+└── .recursa-version        # Framework version
+```
+
+---
+
+## Project Structure (Bootstrapped Projects)
+
+Each bootstrapped project follows this layout:
+
 ## The Master Layout
 
 ```
