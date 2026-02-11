@@ -14,7 +14,12 @@ recursa/
 │   ├── SOUL.template.md
 │   ├── LOOP.template.md
 │   ├── LEARNING.template.md
+│   ├── LEARNING_ARCHIVE.template.md
 │   ├── METRICS.template.md
+│   ├── ISSUES.template.md         # Track bugs, features, technical debt
+│   ├── SUCCESS_PATHS.template.md  # Track routes to top-tier results
+│   ├── USER_INPUTS.template.md
+│   ├── ISSUE_TRIAGE.task.md       # Recurring task: periodic issue addressing
 │   ├── ORCHESTRATION.template.md
 │   └── ...
 ├── tools/                  # CLI tools for project management
@@ -160,6 +165,12 @@ project-root/
 │       ├── snapshots/             # Periodic state snapshots
 │       └── ROLLBACK.md            # Rollback instructions
 │
+├── user-inputs/                   # THE FEEDBACK — User preferences & guidance
+│   ├── preferences.md             # User preferences, priorities, style
+│   ├── favourites.md              # Outputs user liked (helps system learn)
+│   ├── dislikes.md                # Outputs user didn't like
+│   └── requests.md                # Specific things user wants to try
+│
 ├── config/                        # CONFIGURATION — Runtime settings
 │   ├── config.json                # Master config
 │   ├── models.json                # LLM routing config
@@ -235,6 +246,7 @@ The entire project root is a git repository:
 
 | Directory | Read | Write | Delete | Human Approval |
 |-----------|:----:|:-----:|:------:|:--------------:|
+| `user-inputs/*` | ✅ | ❌ | ❌ | User-owned |
 | `system/SOUL.md` | ✅ | ⚠️ | ❌ | For value changes |
 | `system/CONSTITUTION.md` | ✅ | ❌ | ❌ | Always |
 | `system/PERMISSIONS.md` | ✅ | ❌ | ❌ | Always |
@@ -261,6 +273,9 @@ my-system/
 │   ├── SOUL.md                # Start here
 │   ├── CONSTITUTION.md        # Define boundaries
 │   └── IDENTITY.md            # Give it a name
+├── user-inputs/               # User feedback (human-owned)
+│   ├── preferences.md         # User preferences & priorities
+│   └── favourites.md          # Outputs user liked
 ├── skills/
 │   └── built-in/              # A few starter skills
 ├── memory/
@@ -290,8 +305,9 @@ Grow from this minimal structure as capabilities expand.
 
 1. Read `system/SOUL.md` → Reconstruct identity
 2. Read `memory/long_term/*` → Load context
-3. Read `journal/reflections/` (recent) → Recall recent work
-4. Check `tasks/active/` → Resume ongoing work
+3. Read `user-inputs/*` → Load user preferences and feedback
+4. Read `journal/reflections/` (recent) → Recall recent work
+5. Check `tasks/active/` → Resume ongoing work
 
 ### During Session
 

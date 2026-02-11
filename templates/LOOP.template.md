@@ -209,12 +209,47 @@ Based on this iteration:
 ### Patterns Emerging
 - [Observations ready for promotion]
 
+### Diversification Check
+- Top results distribution: [Which approaches produced best results?]
+- Is any single approach >60% of successes? [Yes/No]
+- If yes: Is this concentration STRUCTURAL or STRATEGIC?
+  - **Structural**: Accept it — the approach inherently satisfies quality criteria better
+  - **Strategic**: Rotate exploration to underexplored high-potential paths
+- Check SUCCESS_PATHS.md for unexplored opportunities
+
+### Ceiling Check
+- Any approach tested 5+ times with consistent ceiling? [Yes/No]
+- If yes: Document in LEARNING.md "Structural Ceilings" section
+- Stop trying to break confirmed ceilings — use for reliable output tier
+
+### Issue Triage (REQUIRED)
+Review ISSUES.md and address accumulated issues:
+
+**Bugs**:
+- [ ] Any High severity bugs? → Fix before next iteration
+- [ ] Medium severity with workarounds? → Document, schedule fix
+- [ ] Low severity? → Batch for macro review
+
+**Feature Requests**:
+- [ ] Quick wins (<30 min)? → Implement now
+- [ ] Parameterization opportunities? → Pick 2-3 to implement
+
+**Code Quality**:
+- [ ] Silent failures? → Add error handling
+- [ ] Missing validations? → Add checks
+
 ### Process Changes
 - [Modifications to the loop]
 
 ### Focus for Next [N]
 - [Priorities]
 ```
+
+**REQUIRED outputs for meso retrospective**:
+1. Updated `journal/metrics/dashboard.md` (Current Period, Key Metrics, Alerts)
+2. New reflection file in `journal/reflections/`
+
+Meso is incomplete without both. Update dashboard FIRST before reflection.
 
 ### Macro: Every [M] Iterations
 
@@ -240,6 +275,16 @@ Based on this iteration:
 - Process improvements: [Changes to loop]
 - Documentation updates: [Changes to docs]
 - Architecture changes: [Structural changes]
+
+### Issue Deep Dive (REQUIRED)
+At macro review, comprehensively address technical debt:
+
+- [ ] Review ALL open issues in ISSUES.md
+- [ ] Fix or close stale issues (>[M] iterations old)
+- [ ] Implement highest-priority feature requests
+- [ ] Clear parameterization/improvement backlog
+- [ ] Consider new capability implementation if ideas logged
+- [ ] Update issue severity based on current impact
 ```
 
 ---
@@ -278,11 +323,16 @@ Exploitation wins the short term. Exploration wins the long term.
 |------|----------|--------|
 | Before iteration | LEARNING.md | Consult |
 | Before iteration | METRICS.md | Check trends |
+| Before iteration | ISSUES.md | Avoid known bugs |
 | During iteration | Notes | Capture observations |
 | After iteration | LEARNING.md | Add discoveries |
 | After iteration | METRICS.md | Log metrics |
 | After iteration | OUTPUTS.md | Rate outputs |
+| After iteration | ISSUES.md | Report new bugs |
 | Every [N] iterations | All docs | Retrospective |
+| Every [N] iterations | ISSUES.md | **Triage & fix high-priority issues** |
+| Every [M] iterations | All docs | Strategic review |
+| Every [M] iterations | ISSUES.md | **Deep dive: fix or close stale issues** |
 
 ---
 

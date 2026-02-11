@@ -658,6 +658,60 @@ Behaviors that prevent self-improvement:
 ### 8. Meta-Blindness
 "Just do the work" → Never improving how we improve
 
+### 9. Knowledge Bloat
+"Document everything in detail" → Unmanageable knowledge base
+
+**Symptoms**:
+- LEARNING.md grows to 500KB+ without consolidation
+- More observations [-] than patterns [*] (ratio > 10:1)
+- Stale hypotheses [?] never tested or archived
+- Duplicate entries about the same discoveries
+
+**Prevention**:
+- Consolidate observations into patterns as soon as 3+ confirmations
+- Archive tested hypotheses (with outcomes)
+- Merge duplicate entries regularly
+- Add health checks to meso-retrospective
+- Set file size thresholds (warning: 300KB, critical: 500KB)
+
+### 10. Compaction Debt
+"I'll consolidate later" → Never happens, bloat accumulates
+
+**Reality check**: If LEARNING.md is too large to read in one session, it's too large to be useful. Knowledge that can't be accessed quickly loses its value.
+
+### 11. Success Path Lock-in
+"This technique always works" → Over-exploit, under-explore
+
+**Symptoms**:
+- >60% of top results come from one approach
+- Other proven paths abandoned
+- New territory exploration drops
+
+**Example**: A 100-iteration generative art system discovers that Dadras attractor at profile angles produces 91% 5/5 hit rate. Over time, 87% of all 5/5s (13/15) become Dadras. Analysis reveals this is STRUCTURAL — only Dadras and Modular ellipse satisfy all five brand requirements (asymmetry, voids, luminous convergence, negative space, depth). The solution: accept the concentration, use Dadras deliberately for hero pieces, and maximize diversity at the 4.5/5 tier instead of wasting iterations chasing impossible non-Dadras 5/5s.
+
+**Prevention**:
+- Track success path distribution in metrics
+- Create a "success paths guide" documenting ALL known routes
+- Add diversification check to retrospectives
+- Distinguish STRUCTURAL vs STRATEGIC concentration
+
+### 12. Ceiling Chasing
+"I can break through if I keep trying" → Wasted iterations on structural limits
+
+**Symptoms**:
+- 5+ attempts at same approach with same quality ceiling
+- Continuing to try despite understanding WHY it can't improve
+- Ignoring proven paths to chase impossible goals
+- Quality rate stagnates despite effort
+
+**Prevention**:
+- Document ceilings explicitly with root cause analysis
+- Once ceiling is confirmed (5+ attempts), stop trying to break it
+- Use ceiling-limited approaches for their reliable output tier
+- Redirect exploration to genuine unexplored territory
+
+**Key insight**: Some ceilings are STRUCTURAL — inherent to the approach, not a parameter tuning problem. Accepting this is wisdom, not failure.
+
 ---
 
 ## Domain Adaptation
