@@ -26,6 +26,7 @@ MINIMAL_STRUCTURE = [
     "system",
     "docs",
     "memory",
+    "user-inputs",
     "journal",
     "journal/reflections",
     "journal/metrics",
@@ -377,6 +378,31 @@ def cmd_migrate(args):
     return 0
 
 
+def cmd_health(args):
+    """Check knowledge base health."""
+    import subprocess
+
+    project_path = Path(args.path).resolve()
+
+    if not project_path.exists():
+        print(f"Error: Path not found: {project_path}")
+        return 1
+
+    # Run the knowledge-health tool
+    health_script = Path(__file__).parent / "knowledge-health.py"
+
+    if not health_script.exists():
+        print(f"Error: knowledge-health.py not found")
+        return 1
+
+    cmd = [sys.executable, str(health_script), str(project_path)]
+    if args.json:
+        cmd.append("--json")
+
+    result = subprocess.run(cmd)
+    return result.returncode
+
+
 def main():
     """CLI entry point."""
     import argparse
@@ -389,6 +415,7 @@ Examples:
   recursa init ~/my-project          Initialize a new project
   recursa validate ~/my-project      Check project structure
   recursa status ~/my-project        Show project status
+  recursa health ~/my-project        Check knowledge base health
   recursa log ~/my-project -a "edit" -m "Updated SOUL.md"
   recursa migrate ~/my-project       Check for updates
         """
@@ -427,6 +454,12 @@ Examples:
     migrate_parser.add_argument("--apply", action="store_true",
                                help="Apply migrations (otherwise just check)")
 
+    # health command
+    health_parser = subparsers.add_parser("health", help="Check knowledge base health")
+    health_parser.add_argument("path", help="Path to the project")
+    health_parser.add_argument("--json", action="store_true",
+                              help="Output as JSON")
+
     args = parser.parse_args()
 
     if not args.command:
@@ -439,6 +472,7 @@ Examples:
         "status": cmd_status,
         "log": cmd_log,
         "migrate": cmd_migrate,
+        "health": cmd_health,
     }
 
     return commands[args.command](args)

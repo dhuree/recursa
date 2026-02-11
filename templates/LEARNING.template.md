@@ -23,6 +23,10 @@ See METRICS.md for quantitative validation.
 | Pattern | [*] | Confirmed 3+ times, reliable |
 | Observation | [-] | Single data point, needs validation |
 | Hypothesis | [?] | Untested, based on reasoning |
+| User-validated | [U] | User preference (equal weight to system) |
+| Strong user pref | [U*] | User preference confirmed 3+ times |
+
+**Note**: User input has equal weight with system evaluations. When user and system disagree, that's a learning signal worth investigating.
 
 ---
 
@@ -47,6 +51,30 @@ See METRICS.md for quantitative validation.
 | Category | Issue | Why It Fails |
 |----------|-------|--------------|
 | <!-- Category --> | <!-- Anti-pattern --> | <!-- Root cause --> |
+
+---
+
+## Confirmed Dead Ends
+
+Approaches that have been thoroughly tested and should NOT be revisited. This is valuable knowledge — knowing what doesn't work saves future iterations.
+
+**Criteria for marking as dead end**:
+- 3+ attempts with varied parameters
+- Consistent failure or quality ceiling
+- Root cause understood (structural, not just parameter tuning)
+
+### Dead Ends by Category
+
+<!--
+Example format:
+- **[Category] Approach name** — [Root cause]. Tested: [summary of attempts]
+-->
+
+| Category | Approach | Why It's Dead | Last Attempt |
+|----------|----------|---------------|--------------|
+| <!-- Category --> | <!-- Approach --> | <!-- Root cause --> | <!-- Iteration # --> |
+
+**Important**: Dead ends are not failures — they are discoveries. Document them precisely to prevent future re-exploration of exhausted territories.
 
 ---
 
