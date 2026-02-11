@@ -20,11 +20,18 @@ from collections import defaultdict
 
 
 def find_learning_md(project_path: Path) -> Path | None:
-    """Find LEARNING.md in common locations."""
+    """Find LEARNING.md in common locations, or accept direct file path."""
+    # If the path IS a file (direct path to LEARNING.md)
+    if project_path.is_file() and project_path.name.upper() == 'LEARNING.MD':
+        return project_path
+
+    # Search common locations
     candidates = [
         project_path / 'docs' / 'LEARNING.md',
         project_path / 'LEARNING.md',
         project_path / 'knowledge' / 'LEARNING.md',
+        project_path / 'memory' / 'LEARNING.md',
+        project_path / 'journal' / 'LEARNING.md',
     ]
     for path in candidates:
         if path.exists():

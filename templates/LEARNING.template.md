@@ -173,7 +173,7 @@ Monitor these indicators at every meso-retrospective:
 | Stale hypotheses [?] | > 10 | > 20 | < 10 | <!-- Untested for 10+ iterations --> |
 | Obs:Pattern ratio | > 8:1 | > 12:1 | < 5:1 | <!-- Calculate from counts --> |
 
-**Case study**: A 100-iteration generative art system grew LEARNING.md to 687KB, making it impossible to read in one session. After compaction: 50KB (93% reduction). Knowledge that can't be accessed quickly loses its value.
+**Case study**: A long-running self-improving system grew LEARNING.md to over 500KB, making it impossible to read in one session. After compaction: under 100KB (80%+ reduction). Knowledge that can't be accessed quickly loses its value.
 
 ### Compaction Triggers
 

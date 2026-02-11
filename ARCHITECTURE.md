@@ -687,7 +687,7 @@ Behaviors that prevent self-improvement:
 - Other proven paths abandoned
 - New territory exploration drops
 
-**Example**: A 100-iteration generative art system discovers that Dadras attractor at profile angles produces 91% 5/5 hit rate. Over time, 87% of all 5/5s (13/15) become Dadras. Analysis reveals this is STRUCTURAL — only Dadras and Modular ellipse satisfy all five brand requirements (asymmetry, voids, luminous convergence, negative space, depth). The solution: accept the concentration, use Dadras deliberately for hero pieces, and maximize diversity at the 4.5/5 tier instead of wasting iterations chasing impossible non-Dadras 5/5s.
+**Example**: A content system discovers that one particular format produces 90%+ top-tier results. Over time, most successes come from this format. Analysis reveals this is STRUCTURAL — only this format satisfies all quality criteria simultaneously. The solution: accept the concentration, use this format deliberately for flagship outputs, and maximize diversity at the second-tier instead of wasting iterations chasing impossible alternatives.
 
 **Prevention**:
 - Track success path distribution in metrics

@@ -79,6 +79,36 @@ Before starting the iteration:
 
 ---
 
+## Step 1.5: Validate (Pre-Execute)
+
+**Before executing, validate your plan against known issues.**
+
+This step prevents wasted iterations on approaches that will fail due to known bugs or confirmed dead ends.
+
+### Bug Pattern Check
+```
+□ Check ISSUES.md for bugs affecting your planned approach
+□ Verify workarounds are applied (e.g., explicit parameters)
+□ Run automated validation if available
+```
+
+### Dead End Check
+```
+□ Check LEARNING.md "Confirmed Dead Ends" section
+□ Check LEARNING.md "Structural Ceilings" section
+□ Are you retesting something already proven limited?
+```
+
+### Pre-Flight Validation (if automated tools available)
+```bash
+# Example: Run domain-specific validators before execution
+python tools/validate.py <your_input>
+```
+
+**Why this matters**: A single iteration wasted on a known bug pattern is time lost. Catching issues before execution lets you fix them immediately.
+
+---
+
 ## Step 2: Execute
 
 During the iteration:
@@ -296,11 +326,13 @@ Avoid these behaviors:
 | Anti-Pattern | Problem | Instead |
 |--------------|---------|---------|
 | Skip preparation | Repeating mistakes | Always consult memory |
+| Skip validation | Wasted iterations on known bugs | Check ISSUES.md, run validators |
 | No real-time capture | Lost observations | Note as you go |
 | Inflated ratings | No signal | Rate honestly |
 | Skip documentation | Lost knowledge | Always capture |
 | Same approach always | Local optima | Explore regularly |
 | Skip retrospectives | No meta-improvement | Honor the schedule |
+| Retest confirmed ceilings | Wasted exploration | Accept structural limits |
 
 ---
 
